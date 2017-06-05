@@ -1,0 +1,9 @@
+main: com.gmail.ak1cec0ld.plugins.FirstEverSeen.FirstEverSeen
+name: FirstSeen
+version: 1.0.0
+author: [1cec0ld]
+description: blah
+prefix: FES
+commands:
+  fes:
+    description: does everything
