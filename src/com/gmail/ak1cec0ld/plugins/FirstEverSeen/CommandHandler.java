@@ -35,9 +35,13 @@ public class CommandHandler implements CommandExecutor{
                 ProfileService resolver = HttpRepositoryService.forMinecraft();
                 try {
                     Profile profile = resolver.findByName(args[0]);
-                    UUID uuid = profile.getUniqueId();
-                    OfflinePlayer target = Bukkit.getOfflinePlayer(uuid);
-                    sender.sendMessage(ChatColor.GREEN+FirstEverSeen.formatDateDiff(target.getFirstPlayed()));
+                    if(profile !=null){
+                        UUID uuid = profile.getUniqueId();
+                        OfflinePlayer target = Bukkit.getOfflinePlayer(uuid);
+                        sender.sendMessage(ChatColor.GREEN+FirstEverSeen.formatDateDiff(target.getFirstPlayed()));
+                    } else {
+                        sender.sendMessage(ChatColor.RED+"Player not found, make sure it is cAse-SensiTive!");
+                    }
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
